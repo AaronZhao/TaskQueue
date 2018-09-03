@@ -101,6 +101,7 @@ class TaskQueueDeamon
 						$e->handle( $this->_taskQueueStr, $isDev );
 					}
 				}
+				echo "aaaa";
 				RedisLib::getRedis(TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['host'],
                     TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['port'],
                     TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['auth']
