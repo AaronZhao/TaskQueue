@@ -7,7 +7,7 @@
      */
     try{
         $isDev = '';
-        require_once 'taskQueueConfig.php';
+        require_once 'TaskQueueConfig.php';
         if( empty( $argv[1] ) )
         {
             throw new TaskQueueExceptionLib('任务队列字符串为空!',TaskQueueExceptionLib::ERROR_SYS );
