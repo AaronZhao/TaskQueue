@@ -33,8 +33,8 @@ class TaskCheckMail extends TaskQueueWorkerA{
 		}while( 1 );
 		
 		if( !empty( $str ) ){
-			$alarmobj = new AlarmUserAct(AlarmUserInfoMod::GROUP_PHP);
-			$alarmobj->sendEmailByGroupIdMsg($str,"任务队列异常");
+		    //发邮件接口
+		    echo $str;
 		}
 	}
 }
