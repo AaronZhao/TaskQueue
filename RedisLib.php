@@ -23,7 +23,7 @@ class RedisLib
                 throw new TaskQueueExceptionLib( 'Redis 认证失败!', TaskQueueExceptionLib::ERROR_REDIS_FALSE );
             }
         } catch ( RedisException $e ) {
-            throw new TaskQueueExceptionLib( 'Code:' . $e.getCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+            throw new TaskQueueExceptionLib( 'Code:' . $e->getCode() . "\nMessage:". $e->getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
         }
 
     }
@@ -35,7 +35,7 @@ class RedisLib
             }
             return false;
         } catch ( RedisException $e ){
-            throw new TaskQueueExceptionLib( 'Code:' . $e.getCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+            throw new TaskQueueExceptionLib( 'Code:' . $e->getCode() . "\nMessage:". $e->getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
         }
     }
 
@@ -43,7 +43,7 @@ class RedisLib
         try {
             $this->_redis->close();
         } catch ( RedisException $e ){
-            throw new TaskQueueExceptionLib( 'Code:' . $e.getCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+            throw new TaskQueueExceptionLib( 'Code:' . $e->getCode() . "\nMessage:". $e->getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
         }
     }
 
