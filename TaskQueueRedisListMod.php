@@ -48,7 +48,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
-		if( false === $redis->rpush( $this->_prefix.$taskString, $taskParams ) )
+		if( false === $redis->rPush( $this->_prefix.$taskString, $taskParams ) )
 		{
 			if( 1 == $this->_exceptionFlag )
 			{
@@ -91,7 +91,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
-		if( false === $redis->lpush( $this->_prefix.$taskString, $taskParams ) )
+		if( false === $redis->lPush( $this->_prefix.$taskString, $taskParams ) )
 		{
 			if( 1 == $this->_exceptionFlag )
 			{
@@ -136,7 +136,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
-		$result = $redis->lpop( $this->_prefix.$taskString );
+		$result = $redis->lPop( $this->_prefix.$taskString );
 		
 		if( false === $result )
 		{
@@ -184,7 +184,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
-		$queueSize = $redis->lsize( $this->_prefix.$taskString );
+		$queueSize = $redis->lSize( $this->_prefix.$taskString );
 		if( $number > $queueSize )
 		{
 			$number = $queueSize;
@@ -193,7 +193,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		$resultArr = array();
 		
 		for( $i = 0; $i < $number; $i++ ){
-			$result = $redis->lpop( $this->_prefix.$taskString );
+			$result = $redis->lPop( $this->_prefix.$taskString );
 			if( false === $result )
 			{
 				if( 1 == $this->_exceptionFlag )
@@ -344,7 +344,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$mcKey    = 'workProcess' . $this->_prefix;
         $redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
-		return $redis->setex($mcKey, 180, $ip);       // 设置3分钟超时
+		return $redis->setEx($mcKey, 180, $ip);       // 设置3分钟超时
 	}
 	
 	/**
@@ -463,7 +463,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		}
 		else 
 		{
-			$redis->incrby( $counterString, $step );
+			$redis->incrBy( $counterString, $step );
 		}
 	}
 	
