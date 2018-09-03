@@ -18,7 +18,7 @@ class RedisLib
     private function __construct( $host, $port, $auth ) {
         try {
             $this->_redis = new Redis();
-            $this->_redis->pconnect($host, $port, 1);
+            $this->_redis->connect($host, $port, 1);
             if( !empty( $auth ) && !$this->_redis->auth( $auth ) ) {
                 throw new TaskQueueExceptionLib( 'Redis 认证失败!', TaskQueueExceptionLib::ERROR_REDIS_FALSE );
             }

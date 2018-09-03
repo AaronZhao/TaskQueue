@@ -101,10 +101,10 @@ class TaskQueueDeamon
 						$e->handle( $this->_taskQueueStr, $isDev );
 					}
 				}
-				RedisLib::getRedis(TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['host'],
-                    TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['port'],
-                    TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['auth']
-                )->close();
+//				RedisLib::getRedis(TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['host'],
+//                    TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['port'],
+//                    TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config']['auth']
+//                )->close();
 				usleep( $this->_sleepSec );	
 		}
 		
