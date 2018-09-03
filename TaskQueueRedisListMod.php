@@ -318,7 +318,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 				return false;
 			}
 		}
-		$redis = RedisLib::getRedis( $this->_redisString );
+        $redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		return $redis->get( "TaskQueueArrString" );
 	}
 	
@@ -343,7 +343,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		}
 		
 		$mcKey    = 'workProcess' . $this->_prefix;
-		$redis    = RedisLib::getRedis( $this->_redisString );
+        $redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		return $redis->setex($mcKey, 180, $ip);       // 设置3分钟超时
 	}
 	
@@ -368,7 +368,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		}
 		
 		$mcKey    = 'workProcess' . $this->_prefix;
-		$redis    = RedisLib::getRedis( $this->_redisString );
+        $redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		return $redis->get($mcKey);       // 设置3分钟超时
 	}
 	
@@ -387,8 +387,8 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 				return false;
 			}
 		}
-		
-		$redis = RedisLib::getRedis( $this->_redisString );
+
+        $redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
 		return $redis->set( "TaskQueueArrString", $taskQueueArrString );
 		
