@@ -16,14 +16,17 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 	private $_redisString = "";
 	
 	private $_prefix = "";
+
+	private $_config = [];
 	
 	private $_exceptionFlag = 1;
 	
-	public function __construct ( $taskQueueStr = 'TaskQueue', $exp = 1 )
+	public function __construct ( $taskQueueStr = 'TaskQueue', $config = [], $exp = 1 )
 	{
 	    $this->_redisString = $taskQueueStr;
 		$this->_exceptionFlag = $exp;
 		$this->_prefix = $taskQueueStr."::";
+		$this->_config = $config;
 	}
 	
 	public function addTask( $taskString, $taskParams  )
@@ -43,7 +46,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redisString = $this->_getRedisString( $taskString );
 		
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
 		if( false === $redis->rpush( $this->_prefix.$taskString, $taskParams ) )
 		{
@@ -86,7 +89,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redisString = $this->_getRedisString( $taskString );
 		
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
 		if( false === $redis->lpush( $this->_prefix.$taskString, $taskParams ) )
 		{
@@ -131,7 +134,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redisString = $this->_getRedisString( $taskString );
 		
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
 		$result = $redis->lpop( $this->_prefix.$taskString );
 		
@@ -179,7 +182,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redisString = $this->_getRedisString( $taskString );
 		
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
 		$queueSize = $redis->lsize( $this->_prefix.$taskString );
 		if( $number > $queueSize )
@@ -251,7 +254,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		}
 		
 		$redisString = $this->_getRedisString( $taskString );	
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		$redis->set( self::TASK_QUEUE_PROCESS . $taskString, $processInfoString );
 		return true;
 	}
@@ -274,7 +277,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		}
 		
 		$redisString = $this->_getRedisString( $taskString );	
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		return $redis->get( self::TASK_QUEUE_PROCESS . $taskString);
 	}
 	
@@ -295,7 +298,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		}
 		
 		$redisString = $this->_getRedisString( $taskString );	
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		$redis->del( self::TASK_QUEUE_PROCESS . $taskString );
 		return true;
 	}
@@ -407,7 +410,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 			}
 		}
 		$redisString = $this->_getRedisString( $taskString );	
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		$redis->del($this->_prefix.$taskString );
 	}
 	
@@ -427,7 +430,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 			}
 		}
 		$redisString = $this->_getRedisString( $taskString );	
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		$result = $redis->lSize( $this->_prefix.$taskString );
 		if( false === $result ){
 			throw new TaskQueueExceptionLib( "调用  ".__CLASS__." 中的方法 ".__FUNCTION__.
@@ -453,7 +456,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 			}
 		}
 		$redisString = $this->_getRedisString( $taskString );	
-		$redis = RedisLib::getRedis( $redisString );
+		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		if( 0 == $step )
 		{
 			$redis->incr( $counterString );
