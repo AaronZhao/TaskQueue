@@ -20,10 +20,10 @@ class RedisLib
             $this->_redis = new Redis();
             $this->_redis->connect($host, $port, 1);
             if( !empty( $auth ) && !$this->_redis->auth( $auth ) ) {
-                throw TaskQueueExceptionLib( 'Redis 认证失败!', TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+                throw new TaskQueueExceptionLib( 'Redis 认证失败!', TaskQueueExceptionLib::ERROR_REDIS_FALSE );
             }
         } catch ( RedisException $e ) {
-            throw TaskQueueExceptionLib( 'Code:' . $e.gtCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+            throw new TaskQueueExceptionLib( 'Code:' . $e.gtCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
         }
 
     }
@@ -35,7 +35,7 @@ class RedisLib
             }
             return false;
         } catch ( RedisException $e ){
-            throw TaskQueueExceptionLib( 'Code:' . $e.gtCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+            throw new TaskQueueExceptionLib( 'Code:' . $e.gtCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
         }
     }
 
@@ -43,7 +43,7 @@ class RedisLib
         try {
             $this->_redis->close();
         } catch ( RedisException $e ){
-            throw TaskQueueExceptionLib( 'Code:' . $e.gtCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
+            throw new TaskQueueExceptionLib( 'Code:' . $e.gtCode() . "\nMessage:". $e.getMessage(),TaskQueueExceptionLib::ERROR_REDIS_FALSE );
         }
     }
 

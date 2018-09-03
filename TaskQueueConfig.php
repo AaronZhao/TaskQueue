@@ -12,7 +12,6 @@ define('TASK_INTERVAL', 'taskInterval');
 define('TASK_END_TIME', 'taskEndTime');
 define('TASK_MAX_NUM','taskMaxNum');
 define('TASK_START_TIME', 'taskStartTime');
-define('TASK_END_TIME', 'taskEndTime');
 define('TASK_PID', 'taskPid');
 define('DEFAULT_QUEUE_HOST','TaskQueue');
 define('DEFAULT_STORE_TYPE','RedisList');
