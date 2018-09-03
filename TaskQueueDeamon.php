@@ -123,7 +123,7 @@ class TaskQueueDeamon
 	    {
     		if( !isset($this->_taskQueueObj[$value[TASK_STRING].'_'.$i] ) )
     		{
-    			$this->_taskQueueObj[$value[TASK_STRING].'_'.$i] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'TaskQueueWorker.php '.$value[TASK_STRING].' '.$this->_taskQueueStr.' '. $isDev,
+    			$this->_taskQueueObj[$value[TASK_STRING].'_'.$i] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'worker.php '.$value[TASK_STRING].' '.$this->_taskQueueStr.' '. $isDev,
     				' >> '.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log  2>>'.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log ' );		
     			//需要原来的开始时间已作记录
     			throw new TaskQueueExceptionLib( $this->_taskQueueStr.'::任务'.$value[TASK_STRING].'_'.$i.'执行期间,未通过isset检查.开始执行时间'.date(DATE_FORMAT_ALL,$value[TASK_START_TIME]).';结束时间'.date(DATE_FORMAT_ALL,time()),
@@ -132,7 +132,7 @@ class TaskQueueDeamon
     		else if( !is_object( $this->_taskQueueObj[$value[TASK_STRING].'_'.$i] ) )
     		{
     			unset($this->_taskQueueObj[$value[TASK_STRING].'_'.$i]);
-    			$this->_taskQueueObj[$value[TASK_STRING]] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'taskQueueWorker.php '.$value[TASK_STRING].' '.$this->_taskQueueStr.' '. $isDev,
+    			$this->_taskQueueObj[$value[TASK_STRING]] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'worker.php '.$value[TASK_STRING].' '.$this->_taskQueueStr.' '. $isDev,
     				' >> '.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log  2>>'.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log ' );
     			//需要原来的开始时间已作记录
     			throw new TaskQueueExceptionLib( $this->_taskQueueStr.'::任务'.$value[TASK_STRING].'_'.$i.' 执行期间,产生的对象丢失.开始执行时间'.date(DATE_FORMAT_ALL,$value[TASK_START_TIME]).';结束时间'.date(DATE_FORMAT_ALL,time()),
@@ -168,7 +168,7 @@ class TaskQueueDeamon
 	    
 		if( !isset($this->_taskQueueObj[$value[TASK_STRING]] ) )
 		{
-			$this->_taskQueueObj[$value[TASK_STRING]] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'TaskQueueWorker.php '.$value[TASK_STRING].' '.$this->_taskQueueStr. ' '. $isDev,
+			$this->_taskQueueObj[$value[TASK_STRING]] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'worker.php '.$value[TASK_STRING].' '.$this->_taskQueueStr. ' '. $isDev,
 				' >> '.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log  2>>'.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log ' );		
 		}
 		else if( ( $value[TASK_START_TIME] + $value[TASK_INTERVAL] ) < time() )
@@ -194,7 +194,7 @@ class TaskQueueDeamon
 			}
 			else 
 			{
-				$this->_taskQueueObj[$value[TASK_STRING]] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'TaskQueueWorker.php '.$value[TASK_STRING] .' '.$this->_taskQueueStr.' '. $isDev,
+				$this->_taskQueueObj[$value[TASK_STRING]] = new ProcessLib( PHP_BIN.' '.TASK_ROOT.'worker.php '.$value[TASK_STRING] .' '.$this->_taskQueueStr.' '. $isDev,
 				' >> '.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log  2>>'.TASK_LOG_DIR.'taskQueue_'.$value[TASK_STRING].'.log ' );
 				$value['taskPid'] = $value['obj']->getPid();
 				

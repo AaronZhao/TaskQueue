@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f166e70-1a57-4e2d-8e53-92159ab92f43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/RedisLib.php" beforeDir="false" afterPath="$PROJECT_DIR$/RedisLib.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TaskQueueDeamon.php" beforeDir="false" afterPath="$PROJECT_DIR$/TaskQueueDeamon.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,20 +26,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="76" />
+          <entry key="php" value="78" />
           <entry key="taskQueuePid" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="76" />
+          <entry key="PHP" value="78" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3244" />
+          <entry key="PHP" value="3268" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -51,7 +50,7 @@
       <usages-collector id="statistics.php.rename.constructor" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="3244" />
+          <entry key="php" value="3268" />
           <entry key="taskQueuePid" value="2" />
         </counts>
       </usages-collector>
@@ -83,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TaskQueueConfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="871">
-              <caret line="109" column="39" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="39" />
+            <state relative-caret-position="45">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -98,11 +97,29 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaskQueueWorker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TaskQueueDeamon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="106" column="29" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="106" selection-end-column="29" />
+            <state relative-caret-position="171">
+              <caret line="125" column="112" selection-start-line="125" selection-start-column="112" selection-end-line="125" selection-end-column="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/do/TaskCheckListNum.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -138,6 +155,7 @@
       <find>redisLib</find>
       <find>getRedis( $redisString )</find>
       <find>ERROR_REDIS_FALSE</find>
+      <find>ProcessLib</find>
     </findStrings>
     <replaceStrings>
       <replace>DATE_F</replace>
@@ -198,8 +216,8 @@
         <option value="$PROJECT_DIR$/ProcessLib.php" />
         <option value="$PROJECT_DIR$/do/TaskCheckMail.php" />
         <option value="$PROJECT_DIR$/TaskQueueRedisListMod.php" />
-        <option value="$PROJECT_DIR$/TaskQueueDeamon.php" />
         <option value="$PROJECT_DIR$/RedisLib.php" />
+        <option value="$PROJECT_DIR$/TaskQueueDeamon.php" />
       </list>
     </option>
   </component>
@@ -280,12 +298,12 @@
       <workItem from="1535792165672" duration="2693000" />
       <workItem from="1535795191836" duration="1005000" />
       <workItem from="1535796241032" duration="10016000" />
-      <workItem from="1535966789129" duration="6094000" />
+      <workItem from="1535966789129" duration="6650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25174000" />
+    <option name="totallyTimeSpent" value="25730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-269" y="-1058" width="1920" height="1058" extended-state="6" />
@@ -332,13 +350,6 @@
     <entry file="file://$PROJECT_DIR$/taskQueue/taskQueueDeamon.php" />
     <entry file="file://$PROJECT_DIR$/taskQueue/taskQueueConfig.php" />
     <entry file="file://$PROJECT_DIR$/taskQueue/main.php" />
-    <entry file="file://$PROJECT_DIR$/do/TaskCheckListNum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="36" column="101" selection-start-line="36" selection-start-column="101" selection-end-line="36" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/do/TaskGetDeamonTaskQueue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-129">
@@ -370,13 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TaskQueueWorker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -435,13 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TaskQueueConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="871">
-          <caret line="109" column="39" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TaskQueueExceptionLib.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -463,10 +460,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/do/TaskCheckListNum.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaskQueueConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaskQueueWorker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TaskQueueDeamon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="106" column="29" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="106" selection-end-column="29" />
+        <state relative-caret-position="171">
+          <caret line="125" column="112" selection-start-line="125" selection-start-column="112" selection-end-line="125" selection-end-column="112" />
         </state>
       </provider>
     </entry>
