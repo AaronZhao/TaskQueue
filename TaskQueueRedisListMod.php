@@ -21,12 +21,11 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 	
 	private $_exceptionFlag = 1;
 	
-	public function __construct ( $taskQueueStr = 'TaskQueue', $config = [], $exp = 1 )
+	public function __construct ( $taskQueueStr = 'TaskQueue', $exp = 1 )
 	{
 	    $this->_redisString = $taskQueueStr;
 		$this->_exceptionFlag = $exp;
 		$this->_prefix = $taskQueueStr."::";
-		$this->_config = $config;
 	}
 	
 	public function addTask( $taskString, $taskParams  )
@@ -471,6 +470,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 	//将来可以将任务队列的redis服务器负载用此方法实现
 	private function _getRedisString( $taskString )
 	{
+	    $this->_config = TaskQueueHost::$hostConfig[$taskString]['config'];
 	    if ( $taskString ) {
             return $this->_redisString;
         }

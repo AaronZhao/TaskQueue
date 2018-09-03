@@ -210,7 +210,7 @@ class TaskQueueDeamon
 	{
 		//此处的设计需要在重构阶段思考
 		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$this->_taskQueueStr]['store_type'].'Mod';
-		$obj = new $className ( $this->_taskQueueStr, TaskQueueHost::$hostConfig[$this->_taskQueueStr]['config'] );
+		$obj = new $className ( $this->_taskQueueStr );
 		$result = $obj->getTaskQueue(  );
 		if( NULL == $result || !$result || empty( $result ))
 		{
