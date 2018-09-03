@@ -9,7 +9,10 @@ class RedisLib
             return false;
         }
 
-        !self::$_instance ? self::$_instance = new self( $host, $port, $auth) : return self::$_instance;
+        if ( !self::$_instance ) {
+            self::$_instance = new self($host, $port, $auth);
+        }
+        return self::$_instance;
     }
 
     private function __construct( $host, $port, $auth ) {
