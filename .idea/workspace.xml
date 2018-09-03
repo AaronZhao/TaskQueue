@@ -39,7 +39,7 @@
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3167" />
+          <entry key="PHP" value="3169" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -50,7 +50,7 @@
       <usages-collector id="statistics.php.rename.constructor" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="3167" />
+          <entry key="php" value="3169" />
           <entry key="taskQueuePid" value="2" />
         </counts>
       </usages-collector>
@@ -64,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TaskQueueRedisListMod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="465" column="25" selection-start-line="465" selection-start-column="25" selection-end-line="465" selection-end-column="25" />
+            <state relative-caret-position="-5034">
+              <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -323,12 +323,12 @@
       <workItem from="1535792165672" duration="2693000" />
       <workItem from="1535795191836" duration="1005000" />
       <workItem from="1535796241032" duration="10016000" />
-      <workItem from="1535966789129" duration="4193000" />
+      <workItem from="1535966789129" duration="4561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23273000" />
+    <option name="totallyTimeSpent" value="23641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-269" y="-1058" width="1920" height="1058" extended-state="6" />
@@ -508,8 +508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TaskQueueRedisListMod.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="465" column="25" selection-start-line="465" selection-start-column="25" selection-end-line="465" selection-end-column="25" />
+        <state relative-caret-position="-5034">
+          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
         </state>
       </provider>
     </entry>

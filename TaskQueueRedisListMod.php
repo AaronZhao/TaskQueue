@@ -48,7 +48,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
-		if( false === $redis->rPush( $this->_prefix.$taskString, $taskParams ) )
+		if( !$redis->rPush( $this->_prefix.$taskString, $taskParams ) )
 		{
 			if( 1 == $this->_exceptionFlag )
 			{
@@ -91,7 +91,7 @@ class TaskQueueRedisListMod implements TaskQueueStoreIMod{
 		
 		$redis = RedisLib::getRedis( $this->_config['host'], $this->_config['port'], $this->_config['auth'] );
 		
-		if( false === $redis->lPush( $this->_prefix.$taskString, $taskParams ) )
+		if( !$redis->lPush( $this->_prefix.$taskString, $taskParams ) )
 		{
 			if( 1 == $this->_exceptionFlag )
 			{
