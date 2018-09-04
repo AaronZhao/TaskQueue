@@ -10,16 +10,17 @@ class ProcessLib{
     private $logfiles;
 
     public function __construct( $cl=false, $logfiles=' >/dev/null  2>&1 ' ){
-        if ($cl != false){
+        if ($cl){
             $this->command = $cl;
             $this->logfiles = $logfiles;
             $this->runCom( );
         }
     }
     private function runCom( ){
-        $command = 'nohup '.$this->command.' '.$this->logfiles.' & echo $!';
-        //echo "{$command}\n";
-        exec($command ,$op);
+        $cmd = 'nohup '.$this->command.' '.$this->logfiles.' & echo $!';
+        echo "{$cmd}\n";
+        exec($cmd,$op);
+        echo $op . "\n";
         $this->pid = (int)$op[0];
     }
 
@@ -32,10 +33,12 @@ class ProcessLib{
     }
 
     public function status(){
-        $command = 'ps -p '.$this->pid;
-        exec($command,$op);
-        if (!isset($op[1]))return false;
-        else return true;
+        $cmd = 'ps -p '.$this->pid;
+        exec($cmd,$op);
+        if (!isset($op[1])){
+            return false;
+        }
+        return true;
     }
 
     public function start(){
@@ -51,9 +54,11 @@ class ProcessLib{
     }
 
     public function stop(){
-        $command = 'kill '.$this->pid;
-        exec($command);
-        if ($this->status() == false)return true;
-        else return false;
+        $cmd = 'kill '.$this->pid;
+        exec($cmd);
+        if (!$this->status()) {
+            return true;
+        }
+        return false;
     }
 }

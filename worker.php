@@ -5,7 +5,7 @@
      * Date: 2018/9/1
      * Time: 下午6:01
      */
-    require_once 'taskQueueConfig.php';
+    require_once 'TaskQueueConfig.php';
     try{
         $taskString = isset( $argv[1] ) ? $argv[1] : DEFAULT_QUEUE_HOST;
         $taskQueueStr = $argv[2];
@@ -22,7 +22,7 @@
         }
 
         $taskQueueWorker = new TaskQueueWorker( );
-        $className = 'task'.$taskString;
+        $className = 'Task'.$taskString;
         $pid = posix_getpid();
         $startTime = time();
 
@@ -40,9 +40,9 @@
         }
         $processInfo = $taskQueueWorker->getProcessInfo( $taskString, $taskQueueStr );
 
-        $processInfo['taskPid'] = $pid;
-        $processInfo['taskStartTime'] = $startTime;
-        $processInfo['taskEndTime'] = "";
+        $processInfo[TASK_PID] = $pid;
+        $processInfo[TASK_START_TIME] = $startTime;
+        $processInfo[TASK_END_TIME] = "";
 
         $taskQueueWorker->addProcessInfo( $taskString, $processInfo , $taskQueueStr );
 
@@ -53,7 +53,7 @@
 
         $processInfo = $taskQueueWorker->getProcessInfo( $taskString, $taskQueueStr );
 
-        $processInfo['taskEndTime'] = $endTime;
+        $processInfo[TASK_END_TIME] = $endTime;
 
         $taskQueueWorker->addProcessInfo( $taskString, $processInfo, $taskQueueStr );
 
