@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f166e70-1a57-4e2d-8e53-92159ab92f43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/do/TaskQueueWorkerA.php" beforeDir="false" afterPath="$PROJECT_DIR$/do/TaskQueueWorkerA.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/worker.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +39,7 @@
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3993" />
+          <entry key="PHP" value="3994" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -51,7 +50,7 @@
       <usages-collector id="statistics.php.rename.constructor" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="3993" />
+          <entry key="php" value="3994" />
           <entry key="taskQueuePid" value="2" />
         </counts>
       </usages-collector>
@@ -75,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/worker.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -329,12 +328,12 @@
       <workItem from="1535792165672" duration="2693000" />
       <workItem from="1535795191836" duration="1005000" />
       <workItem from="1535796241032" duration="10016000" />
-      <workItem from="1535966789129" duration="14230000" />
+      <workItem from="1535966789129" duration="14267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33310000" />
+    <option name="totallyTimeSpent" value="33347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-269" y="-1058" width="1920" height="1058" extended-state="6" />
@@ -517,7 +516,7 @@
     <entry file="file://$PROJECT_DIR$/worker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>

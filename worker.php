@@ -49,7 +49,6 @@
         $obj->taskQueueStr = $taskQueueStr;
         $taskQueueWorker -> run( $obj );
         $endTime = time();
-        echo "endtime {$endTime} \n";
 
         $processInfo = $taskQueueWorker->getProcessInfo( $taskString, $taskQueueStr );
 
