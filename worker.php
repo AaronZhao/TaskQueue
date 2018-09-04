@@ -6,9 +6,11 @@
      * Time: 下午6:01
      */
     require_once 'TaskQueueConfig.php';
+    $isDev = '';
     try{
-        $taskString = $argv[1];
+        $taskString = isset( $argv[1] ) ? $argv[1] : "";
         $taskQueueStr = isset( $argv[2] ) ? $argv[2] : DEFAULT_QUEUE_HOST;
+        $isDev  = isset( $argv[3] ) ? $argv[3] : '';
 
         if( empty( $taskString ) || empty( $taskQueueStr) )
         {
