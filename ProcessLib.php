@@ -4,23 +4,22 @@
  * @compability: Linux only. (Windows does not work).
  * @author: Peec
  */
-class ProcessLib{
+class processLib{
     private $pid;
     private $command;
     private $logfiles;
 
     public function __construct( $cl=false, $logfiles=' >/dev/null  2>&1 ' ){
-        if ($cl){
+        if ($cl != false){
             $this->command = $cl;
             $this->logfiles = $logfiles;
             $this->runCom( );
         }
     }
     private function runCom( ){
-        $cmd = 'nohup '.$this->command.' '.$this->logfiles.' & echo $!';
-        echo "{$cmd}\n";
-        exec($cmd,$op);
-        echo $op . "\n";
+        $command = 'nohup '.$this->command.' '.$this->logfiles.' & echo $!';
+        //echo "{$command}\n";
+        exec($command ,$op);
         $this->pid = (int)$op[0];
     }
 
@@ -33,12 +32,10 @@ class ProcessLib{
     }
 
     public function status(){
-        $cmd = 'ps -p '.$this->pid;
-        exec($cmd,$op);
-        if (!isset($op[1])){
-            return false;
-        }
-        return true;
+        $command = 'ps -p '.$this->pid;
+        exec($command,$op);
+        if (!isset($op[1]))return false;
+        else return true;
     }
 
     public function start(){
@@ -54,11 +51,10 @@ class ProcessLib{
     }
 
     public function stop(){
-        $cmd = 'kill '.$this->pid;
-        exec($cmd);
-        if (!$this->status()) {
-            return true;
-        }
-        return false;
+        $command = 'kill '.$this->pid;
+        exec($command);
+        if ($this->status() == false)return true;
+        else return false;
     }
 }
+?>
