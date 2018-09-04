@@ -12,7 +12,6 @@
 
         if( empty( $taskString ) || empty( $taskQueueStr) )
         {
-            echo " 参数有误!\n";
             throw new TaskQueueExceptionLib( $taskQueueStr.'::worker 进程获取参数获取失败! taskString'.$taskString.' taskQueueStr:'.$taskQueueStr,
                 TaskQueueExceptionLib::EXP_PARAMS );
         }
@@ -21,7 +20,6 @@
         {
             throw new TaskQueueExceptionLib($taskQueueStr."::任务队列字符串无法识别!",TaskQueueExceptionLib::ERROR_SYS);
         }
-        echo "bb\n";
         $taskQueueWorker = new TaskQueueWorker( );
         $className = 'Task'.$taskString;
         $pid = posix_getpid();
