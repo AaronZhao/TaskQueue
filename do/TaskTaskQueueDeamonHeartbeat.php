@@ -20,6 +20,7 @@ class TaskTaskQueueDeamonHeartbeat extends TaskQueueWorkerA
     {
         $ipaddr = file_get_contents('/etc/sysconfig/network-scripts/ifcfg-eth0');//读取服务器配置文件
         preg_match('/IPADDR=[\"]?([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})/', $ipaddr, $arr);//定位提取IP
+        var_dump( $arr );
         $ipaddr = $arr[1];
         
         $taskQueueStore = $this->getTaskQueueStore( );
