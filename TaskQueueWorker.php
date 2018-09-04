@@ -45,7 +45,6 @@ class TaskQueueWorker{
 	{
 		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$taskQueueStr]['store_type'].'Mod';
 		$taskQueueStore = new $className ( $taskQueueStr );
-		echo $className . "\n\n\n\n";
 		$taskQueueStore->addProcessInfo( $taskString, $this->_encode( $processInfo ) );
 	}
 	

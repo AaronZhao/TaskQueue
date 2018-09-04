@@ -46,6 +46,7 @@
         $taskQueueWorker->addProcessInfo( $taskString, $processInfo , $taskQueueStr );
 
         $obj = new $className( );
+        echo "\n\n\n\n" . $className . "\n\n\n\n";
         $obj->taskQueueStr = $taskQueueStr;
         $taskQueueWorker -> run( $obj );
         $endTime = time();
