@@ -38,6 +38,7 @@ class TaskQueueExceptionLib extends Exception{
     
     public function handle( $hostStr, $isDev )
     {
+        echo "handle\n";
     	switch ($this->code )
     	{
     		case TaskQueueExceptionLib::EXP_TASKPROCESS_ASYNC_TIMEOUT:
@@ -60,6 +61,7 @@ class TaskQueueExceptionLib extends Exception{
     
     private function _writeLog()
     {
+        echo "write log!\n";
     	$date = date(DATE_FORMAT_ALL );
     	$logDate = date("Y-m-d");
     	$err = $this->message;
