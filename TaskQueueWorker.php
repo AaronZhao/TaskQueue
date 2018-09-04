@@ -31,7 +31,7 @@ class TaskQueueWorker{
 	public function getProcessInfo( $taskString, $taskQueueStr )
 	{
 	    
-		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$taskQueueStr].'Mod';
+		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$taskQueueStr]['store_type'].'Mod';
 
 		$taskQueueStore = new $className ( $taskQueueStr );
 		$result = $taskQueueStore->getProcessInfo( $taskString );
@@ -44,7 +44,7 @@ class TaskQueueWorker{
 	
 	public function addProcessInfo( $taskString, $processInfo, $taskQueueStr )
 	{
-		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$taskQueueStr].'Mod';
+		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$taskQueueStr]['store_type'].'Mod';
 		$taskQueueStore = new $className ( $taskQueueStr );
 		$taskQueueStore->addProcessInfo( $taskString, $this->_encode( $processInfo ) );
 	}
