@@ -67,7 +67,7 @@ class TaskQueueHost{
 	public static $sysTaskArr = [
 		'GetDeamonTaskQueue',
 		'CheckListNum',			// 检查是否有超多未处理的队列
-	    'TaskQueueDeamonHeartbeat'
+	    //'TaskQueueDeamonHeartbeat'
 	];
 }
 
