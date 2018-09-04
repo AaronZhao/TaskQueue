@@ -21,7 +21,7 @@
         {
             throw new TaskQueueExceptionLib($taskQueueStr."::任务队列字符串无法识别!",TaskQueueExceptionLib::ERROR_SYS);
         }
-        echo "bb
+        echo "bb\n";
         $taskQueueWorker = new TaskQueueWorker( );
         $className = 'Task'.$taskString;
         $pid = posix_getpid();
