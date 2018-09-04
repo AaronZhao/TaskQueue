@@ -33,7 +33,6 @@
         }
 
         require_once TASK_ROOT.'do/'.$className.'.php';
-        echo TASK_ROOT.'do/'.$className.'.php';
         if( !class_exists( $className ) ){
             throw new TaskQueueExceptionLib($taskQueueStr.'::任务类不存在! 文件名:'.TASK_ROOT.'do/'.$className.'.php  类名:'.$className."\n",
                 TaskQueueExceptionLib::ERROR_TASKCLASS_NOT_EXISTS );

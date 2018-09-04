@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f166e70-1a57-4e2d-8e53-92159ab92f43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/TaskQueueWorker.php" beforeDir="false" afterPath="$PROJECT_DIR$/TaskQueueWorker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/worker.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +40,7 @@
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3799" />
+          <entry key="PHP" value="3891" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -50,7 +51,7 @@
       <usages-collector id="statistics.php.rename.constructor" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="3799" />
+          <entry key="php" value="3891" />
           <entry key="taskQueuePid" value="2" />
         </counts>
       </usages-collector>
@@ -70,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/worker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+            <state relative-caret-position="447">
+              <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -97,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TaskQueueWorker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="277">
+              <caret line="34" column="91" selection-start-line="34" selection-start-column="91" selection-end-line="34" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -244,9 +245,9 @@
         <option value="$PROJECT_DIR$/TaskQueueDeamon.php" />
         <option value="$PROJECT_DIR$/ProcessLib.php" />
         <option value="$PROJECT_DIR$/TaskQueueExceptionLib.php" />
-        <option value="$PROJECT_DIR$/TaskQueueWorker.php" />
         <option value="$PROJECT_DIR$/TaskQueueConfig.php" />
         <option value="$PROJECT_DIR$/worker.php" />
+        <option value="$PROJECT_DIR$/TaskQueueWorker.php" />
       </list>
     </option>
   </component>
@@ -327,12 +328,12 @@
       <workItem from="1535792165672" duration="2693000" />
       <workItem from="1535795191836" duration="1005000" />
       <workItem from="1535796241032" duration="10016000" />
-      <workItem from="1535966789129" duration="13510000" />
+      <workItem from="1535966789129" duration="13633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32590000" />
+    <option name="totallyTimeSpent" value="32713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-269" y="-1058" width="1920" height="1058" extended-state="6" />
@@ -505,17 +506,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TaskQueueWorker.php">
+    <entry file="file://$PROJECT_DIR$/worker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="447">
+          <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/worker.php">
+    <entry file="file://$PROJECT_DIR$/TaskQueueWorker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+        <state relative-caret-position="277">
+          <caret line="34" column="91" selection-start-line="34" selection-start-column="91" selection-end-line="34" selection-end-column="91" />
         </state>
       </provider>
     </entry>
