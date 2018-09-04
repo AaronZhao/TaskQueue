@@ -26,7 +26,6 @@
         $className = 'Task'.$taskString;
         $pid = posix_getpid();
         $startTime = time();
-        echo "starttime {$startTime}/ pid {$pid} \n";
         if( !file_exists(TASK_ROOT.'do/'.$className.'.php'))
         {
             throw new TaskQueueExceptionLib($taskQueueStr.'::任务文件不存在! 文件名:'.TASK_ROOT.'do/'.$className.".php \n",
@@ -34,11 +33,12 @@
         }
 
         require_once TASK_ROOT.'do/'.$className.'.php';
-
+        echo TASK_ROOT.'do/'.$className.'.php';
         if( !class_exists( $className ) ){
             throw new TaskQueueExceptionLib($taskQueueStr.'::任务类不存在! 文件名:'.TASK_ROOT.'do/'.$className.'.php  类名:'.$className."\n",
                 TaskQueueExceptionLib::ERROR_TASKCLASS_NOT_EXISTS );
         }
+        echo
         $processInfo = $taskQueueWorker->getProcessInfo( $taskString, $taskQueueStr );
 
         $processInfo[TASK_PID] = $pid;
