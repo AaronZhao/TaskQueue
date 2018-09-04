@@ -32,7 +32,6 @@ class TaskQueueWorker{
 	{
 	    
 		$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$taskQueueStr]['store_type'].'Mod';
-
 		$taskQueueStore = new $className ( $taskQueueStr );
 		$result = $taskQueueStore->getProcessInfo( $taskString );
 		if( null == $result ||  !$result )

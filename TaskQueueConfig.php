@@ -64,11 +64,11 @@ class TaskQueueHost{
 	const TASK_TYPE_SYNC   = 1;
 	const TASK_TYPE_ASYNC  = 2;
 	
-	public static $sysTaskArr = array(
+	public static $sysTaskArr = [
 		'GetDeamonTaskQueue',
 		'CheckListNum',			// 检查是否有超多未处理的队列
-	    'TaskQueueDeamonHeartbeat',
-	);
+	    'TaskQueueDeamonHeartbeat'
+	];
 }
 
 register_shutdown_function( function(){
