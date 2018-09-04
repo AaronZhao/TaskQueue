@@ -37,7 +37,6 @@
             throw new TaskQueueExceptionLib($taskQueueStr.'::任务类不存在! 文件名:'.TASK_ROOT.'do/'.$className.'.php  类名:'.$className."\n",
                 TaskQueueExceptionLib::ERROR_TASKCLASS_NOT_EXISTS );
         }
-        echo
         $processInfo = $taskQueueWorker->getProcessInfo( $taskString, $taskQueueStr );
 
         $processInfo[TASK_PID] = $pid;

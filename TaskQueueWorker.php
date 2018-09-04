@@ -35,6 +35,7 @@ class TaskQueueWorker{
 		echo "classname: {$className} taskString: {$taskString} taskQueueStr:{$taskQueueStr}\n";
 		$taskQueueStore = new $className ( $taskQueueStr );
 		$result = $taskQueueStore->getProcessInfo( $taskString );
+		var_dump($result);
 		if( null == $result ||  !$result )
 		{
 			$result = $this->_encode(array());
