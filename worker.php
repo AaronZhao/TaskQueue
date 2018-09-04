@@ -7,20 +7,21 @@
      */
     require_once 'TaskQueueConfig.php';
     try{
-        $taskString = isset( $argv[1] ) ? $argv[1] : DEFAULT_QUEUE_HOST;
-        $taskQueueStr = $argv[2];
+        $taskString = $argv[1];
+        $taskQueueStr = isset( $argv[2] ) ? $argv[2] : DEFAULT_QUEUE_HOST;
 
         if( empty( $taskString ) || empty( $taskQueueStr) )
         {
+            echo " 参数有误!\n";
             throw new TaskQueueExceptionLib( $taskQueueStr.'::worker 进程获取参数获取失败! taskString'.$taskString.' taskQueueStr:'.$taskQueueStr,
                 TaskQueueExceptionLib::EXP_PARAMS );
         }
 
-        if( !isset( TaskQueueHost::$hostConfig[$taskQueueStr] )  || !isset( redisLib::$_config[$taskQueueStr] ) )
+        if( !isset( TaskQueueHost::$hostConfig[$taskQueueStr] )  )
         {
             throw new TaskQueueExceptionLib($taskQueueStr."::任务队列字符串无法识别!",TaskQueueExceptionLib::ERROR_SYS);
         }
-
+        echo "bb
         $taskQueueWorker = new TaskQueueWorker( );
         $className = 'Task'.$taskString;
         $pid = posix_getpid();
