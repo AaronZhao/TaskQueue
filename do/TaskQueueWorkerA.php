@@ -34,7 +34,7 @@ abstract class TaskQueueWorkerA{
 	 */
 	protected  function getTaskQueueStore(  )
 	{
-	 	$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$this->taskQueueStr].'Mod';
+	 	$className = 'TaskQueue'.TaskQueueHost::$hostConfig[$this->taskQueueStr]['store_type'].'Mod';
 	 	return new $className ( $this->taskQueueStr );
 	}
 	
