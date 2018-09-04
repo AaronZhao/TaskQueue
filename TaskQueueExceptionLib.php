@@ -64,8 +64,10 @@ class TaskQueueExceptionLib extends Exception{
         echo "write log!\n";
     	$date = date(DATE_FORMAT_ALL );
     	$logDate = date("Y-m-d");
+    	echo $date . ' :' . $logDate ."\n";
     	$err = $this->message;
     	$err .= parent::__toString();
+    	var_dump( $err );
     	file_put_contents(TASK_LOG_DIR . "task_queue_$logDate.log", "{$date} :: \n {$err}\n\n\n\n", FILE_APPEND);
     }
 	
