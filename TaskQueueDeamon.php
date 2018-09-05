@@ -62,12 +62,12 @@ class TaskQueueDeamon
 	{	
 	    global $isDev;
 	    //增加重启进程机制
-	    $pidTm = $this->_getSysPidFilectime('taskQueuePid');
+	    $pidTm = $this->_getSysPidFilectime( TASK_ROOT . 'taskQueuePid');
 	    
 		while(1){
 		        
 		        //增加重启进程机制 start
-    		    $pidTm2	= $this->_getSysPidFilectime('taskQueuePid');
+    		    $pidTm2	= $this->_getSysPidFilectime(TASK_ROOT . 'taskQueuePid');
     		    if ($pidTm2 != $pidTm)
     		    {
     		        echo "kill by bin/taskQueuePid \n";
